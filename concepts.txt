@@ -1,0 +1,28 @@
+clock 
+memory alignment 
+static_assert
+is_trivially_copyable_v
+spsc ring buffer
+zero allocation infra (not assigning anything on heap in the hotpath)
+memory allocation
+RAII 
+void* raw = operator new(16);
+Virtual addresses, TLB, os memory management
+RSS (Resident Set Size)
+Live Object Count 
+Memory Fragmentation
+Cache Hit and Miss 
+L1,L2,L3 Cache 
+Cache Prefetching
+Hardware Prefetcher
+Cache locality (Spatial locality, temporal locality)
+CPP compilation process
+shared and unique pointers
+cache aligned returns
+intrusive and non-intrusive free lists
+branch prediction
+lock contention
+ring buffer
+cache coherence protocol (MESI protocol)
+adjacent line prefetching
+memory ordering

@@ -27,3 +27,10 @@ cache coherence protocol (MESI protocol)
 adjacent line prefetching
 memory ordering
 multi producer and multi consumer, CAS (Compare And Swap loops)
+dynamic dispatch, virtual functions,vtable pointer
+PMR(Polymorphic Memory Resource)
+tagged union (structs)
+variant vs union
+static factories, overriding functions
+return value optimization
+std::span

@@ -26,3 +26,4 @@ ring buffer
 cache coherence protocol (MESI protocol)
 adjacent line prefetching
 memory ordering
+multi producer and multi consumer, CAS (Compare And Swap loops)

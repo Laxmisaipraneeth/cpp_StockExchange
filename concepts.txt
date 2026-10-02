@@ -34,3 +34,8 @@ variant vs union
 static factories, overriding functions
 return value optimization
 std::span
+bump allocator
+redblack tree, hashtable
+constexpr evaluated at compile time if inputs are const?
+construct_at
+hashmap emplace

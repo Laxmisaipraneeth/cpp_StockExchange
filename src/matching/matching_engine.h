@@ -7,7 +7,7 @@
 #include "core/types.h"
 #include "matching/order_book.h"
 
-// just a symbol reuter
+// just a symbol router
 namespace exchange::matching {
 
 enum class RequestAction : std::uint8_t {
@@ -65,8 +65,7 @@ public:
     return {};
   }
 
-  [[nodiscard]] const Book *
-  find_book(const core::Symbol &symbol) const noexcept {
+  [[nodiscard]] const Book *find_book(const core::Symbol &symbol) const noexcept {
     const auto book_it = books_.find(symbol);
     if (book_it == books_.end()) {
       return nullptr;

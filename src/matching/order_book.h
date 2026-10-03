@@ -179,6 +179,11 @@ namespace exchange::matching
                 return events();
             }
 
+            /*not allowing stop orders to be modified cuz it's not entered
+            market, it's in MultiMap where we can't guarantee time priority
+            and many other reasons i don't want to mention
+            // !NOTES TO FUTURE SELF: Don't change this
+            */
             if (order->is_stop_order())
             {
                 emit_rejected(timestamp, order_id, ReasonCode::INVALID_MODIFICATION);
@@ -197,6 +202,7 @@ namespace exchange::matching
                 return events();
             }
 
+            // modify order inplace to keep it's time-priority
             if (new_price == order->price && new_qty < order->qty)
             {
                 reduce_order_quantity(*order, new_qty, timestamp);
@@ -208,6 +214,8 @@ namespace exchange::matching
                 return events();
             }
 
+            // price changes and qty increase then cancel and replace
+            // to maintain time-priority
             const core::Side side = order->side;
             const core::OrderType type = order->type;
             const core::ParticipantId participant_id = order->participant_id;
@@ -755,6 +763,7 @@ namespace exchange::matching
             }
         }
 
+        //entry point(kinda)
         void execute_inbound_order(Order &order, core::Timestamp event_timestamp,
                                    bool emit_accept_event)
         {
@@ -1056,4 +1065,4 @@ namespace exchange::matching
         core::Price last_trade_price_{0};
     };
 
-} // namespace exchange::matching
+}

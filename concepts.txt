@@ -39,3 +39,14 @@ redblack tree, hashtable
 constexpr evaluated at compile time if inputs are const?
 construct_at
 hashmap emplace
+
+
+
+
+tip for future me:
+build the infra (if concerned the existing one is not right for the use case)
+list out properties and group them based on functionality
+first map out and understand how a system works,
+draft implement it to find helper functions,
+find the side effects to be produced by the function,
+refactor
